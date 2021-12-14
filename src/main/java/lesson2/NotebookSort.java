@@ -5,7 +5,7 @@ public class NotebookSort {
     private final String[] manufacturers = {"Lenuvo", "Asos", "MacNote", "Eser", "Xamiou"};// наименования производителей из задания
     private final int[] ramSizes = {4, 8, 12, 16, 20, 24};
     private final int[] prices = new int[30];
-    Notebook[] notebooks = new Notebook[100];
+    Notebook[] notebooks = new Notebook[10000];
 
     public NotebookSort() {
         init();
