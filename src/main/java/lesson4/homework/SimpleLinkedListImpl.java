@@ -150,23 +150,36 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new ListIterator<E>();
+        return new ListIterator(first);
     }
-    private class ListIterator<E> implements Iterator<E> {
+
+    public class ListIterator implements Iterator<E> {
+
+        Node<E> node;
+        int index = 0;
+
+        public ListIterator(Node<E> node) {
+            this.node = node;
+        }
 
         @Override
         public boolean hasNext() {
-            return false;
+            return node.next != null;
         }
 
         @Override
         public E next() {
-            return null;
+            if (node.next == null) {
+                return null;
+            }
+            node = node.next;
+            index++;
+            return node.item;
         }
 
         @Override
         public void remove() {
-            Iterator.super.remove();
+            SimpleLinkedListImpl.this.remove(index);
         }
     }
 }
