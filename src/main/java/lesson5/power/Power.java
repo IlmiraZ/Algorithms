@@ -1,12 +1,8 @@
-package lesson5;
+package lesson5.power;
 
 import static java.lang.Math.abs;
 
 public class Power {
-    public static void main(String[] args) {
-        System.out.println(power(5, -3));
-    }
-
     public static double power(double num, int power) {
         if (power == 0) {
             return 1;
